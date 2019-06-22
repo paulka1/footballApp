@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { GetApiService } from 'src/app/service/get-api.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class OlPlayersComponent implements OnInit {
 
   ngOnInit() {
     this.players = this.serviceApi.getApi()
+    console.log(this.players)
     return this.players;
   }
 

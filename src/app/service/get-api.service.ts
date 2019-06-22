@@ -6,13 +6,10 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class GetApiService {
-  dataFoot;
 
   constructor(private http: HttpClient) { }
 
   getApi(): Observable<any> {
-    this.dataFoot= this.http.get("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/{league_id}").subscribe();
-    return this.dataFoot
-    console.log(this.dataFoot)
+    return this.http.get("https://www.balldontlie.io/api/v1/players");
   }
 }
