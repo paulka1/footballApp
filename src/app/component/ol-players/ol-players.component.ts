@@ -8,14 +8,15 @@ import { GetApiService } from 'src/app/service/get-api.service';
   styleUrls: ['./ol-players.component.scss']
 })
 export class OlPlayersComponent implements OnInit {
-  players;
+  players:Object;
 
   constructor(private serviceApi: GetApiService) { }
 
   ngOnInit() {
-    this.players = this.serviceApi.getApi().subscribe();
-    console.log(this.players)
-    return this.players;
+    this.serviceApi.getApi().subscribe(data => {
+      this.players = data;
+      console.log(this.players)
+    });
   }
 
 }
