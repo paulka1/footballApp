@@ -13,7 +13,7 @@ export class OlPlayersComponent implements OnInit {
   constructor(private serviceApi: GetApiService) { }
 
   ngOnInit() {
-    this.players = this.serviceApi.getApi()
+    this.players = this.serviceApi.getApi().subscribe();
     console.log(this.players)
     return this.players;
   }
